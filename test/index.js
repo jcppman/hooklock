@@ -42,7 +42,11 @@ describe('Hooklock', function () {
 			}));
 
 			// Start to write to stream
-			async.eachSeries(seq, function (ts, next) {
+			timeline.write({
+				type: 'sync',
+				timestamp: 0
+			});
+			async.each(seq, function (ts, next) {
 				setTimeout(function () {
 					timeline.write({
 						timestamp: ts

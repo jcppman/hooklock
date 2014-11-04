@@ -37,8 +37,10 @@ Hooklock.prototype._transform = function (data, encoding, next) {
 	}
 	data.timestamp = tIn - that._offset;
 
-	next(null, data);
-
+	if(data.type !== 'sync') {
+		this.push(data);
+	}
+	next(null);
 };
 
 module.exports = Hooklock;

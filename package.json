@@ -1,6 +1,6 @@
 {
   "name": "hooklock",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "lock timelines for time sensitive stream",
   "main": "index.js",
   "scripts": {
